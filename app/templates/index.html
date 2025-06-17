@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Головна - Flask Blog{% endblock %}
+{% block content %}
+  <h1>Пости</h1>
+  {% for post in posts %}
+    <div class="post-preview">
+      <h2><a href="{{ url_for('main.post_detail', post_id=post.id) }}">{{ post.title }}</a></h2>
+      <p>Автор: {{ post.author.username }}</p>
+      <p>{{ post.content[:150] }}{% if post.content|length > 150 %}...{% endif %}</p>
+    </div>
+    <hr>
+  {% else %}
+    <p>Пости відсутні.</p>
+  {% endfor %}
+{% endblock %}

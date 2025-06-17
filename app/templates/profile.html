@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Профіль{% endblock %}
+{% block content %}
+  <h1>Профіль користувача</h1>
+  <p><strong>Ім'я користувача:</strong> {{ current_user.username }}</p>
+  <p><strong>Email:</strong> {{ current_user.email }}</p>
+  <hr>
+  <h3>Ваші пости</h3>
+  {% for post in current_user.posts %}
+    <div>
+      <a href="{{ url_for('main.post_detail', post_id=post.id) }}">{{ post.title }}</a>
+    </div>
+  {% else %}
+    <p>Ви ще не створили жодного посту.</p>
+  {% endfor %}
+{% endblock %}
