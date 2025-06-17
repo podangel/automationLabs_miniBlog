@@ -5,4 +5,4 @@ run:
 	. venv/bin/activate && python main.py
 
 init_DB:
-    flask db init && flask db migrate -m "Initial migration" && flask db upgrade
+	flask db init && flask db migrate -m "Initial migration" && flask db upgrade
