@@ -4,7 +4,7 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bcrypt import Bcrypt
 from flask_migrate import Migrate
-from config import Config
+from config import Config, TestConfig
 
 db = SQLAlchemy()
 login_manager = LoginManager()

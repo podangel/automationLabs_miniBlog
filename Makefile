@@ -6,3 +6,6 @@ run:
 
 init_DB:
 	flask db init && flask db migrate -m "Initial migration" && flask db upgrade
+
+test:
+	. venv/bin/activate && python3 -m unittest discover tests
